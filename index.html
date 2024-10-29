@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Astra</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para o botão */
+        .styled-button {
+            background-color: rgba(192, 192, 190, 0.671); /* Cor de fundo */
+            color: #000; /* Cor do texto */
+            border: none; /* Sem borda */
+            padding: 10px 20px; /* Espaçamento interno */
+            font-size: 18px; /* Tamanho da fonte */
+            font-family: Verdana, sans-serif; /* Fonte */
+            border-radius: 5px; /* Cantos arredondados */
+            cursor: pointer; /* Cursor de ponteiro */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra */
+            transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+        }
+
+        .styled-button:hover {
+            background-color: rgba(128, 31, 255, 0.8); /* Cor de fundo ao passar o mouse */
+            transform: translateY(-2px); /* Eleva o botão ao passar o mouse */
+        }
+
+        /* Estilos da tela de carregamento */
+        .loading-screen {
+            display: none; /* Oculta inicialmente */
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center; /* Centraliza verticalmente */
+            position: fixed; /* Fixa na tela */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.452); /* Fundo branco semi-transparente */
+            z-index: 999; /* Coloca na frente */
+        }
+
+        .spinner {
+            border: 8px solid rgba(192, 192, 190, 0.671); /* Borda do spinner */
+            border-top: 8px solid rgba(0, 0, 0, 0.7); /* Cor da parte superior */
+            border-radius: 50%; /* Forma redonda */
+            width: 50px; /* Largura */
+            height: 50px; /* Altura */
+            animation: spin 1s linear infinite; /* Animação */
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-family:Verdana,sans-serif;color:rgba(192,192,190,0.671);font-size:48px;text-shadow:6px 6px 10px rgba(0,0,0,0.7);">
+        Bem-vindo ao Projeto Astra
+    </h1>
+    <hr style="border: 2px solid rgba(192, 192, 190, 0.671); width: 100%;">
+
+    <main>
+        <article>
+            <h2>Olá, obrigado por visitar nosso site! Estamos felizes em tê-lo aqui e esperamos que encontre o que precisa.</h2>
+        </article>
+        <article>
+            <h2>Algumas curiosidades...</h2>
+            <p>1. O som não viaja no espaço. O espaço é um vácuo quase perfeito, o que significa que não há ar para transmitir som. Portanto, se você estivesse em uma nave espacial, não ouviria nenhum som. O famoso grito no espaço, como retratado em muitos filmes de ficção científica, não poderia acontecer.</p>
+        </article>
+
+        <p></p>
+        <!-- Botão estilizado -->
+        <button class="styled-button" onclick="showLoadingScreen()">Ir para a próxima página</button>
+    </main>
+
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Astra</p>
+    </footer>
+
+    <script>
+        function showLoadingScreen() {
+            document.getElementById('loadingScreen').style.display = 'flex';
+            setTimeout(function() {
+                window.location.href = 'astra continue.html';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

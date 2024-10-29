@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Astra</title>
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #121212, #181818);
+            color: #eaeaea;
+        }
+
+        header {
+            background-color: #1c1c1c; /* Fundo sólido */
+            backdrop-filter: blur(10px); /* Adiciona o efeito de blur */
+            color: #eaeaea;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background-color: #2c2c2c; /* Fundo sólido */
+            backdrop-filter: blur(10px); /* Adiciona o efeito de blur */
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1, h2 {
+            color: #a8a8a8;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #a1a1a1; /* Cor do botão */
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        a:hover {
+            background-color: #813dffa4; /* Cor do botão ao passar o mouse */
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #1c1c1c; /* Fundo sólido */
+            backdrop-filter: blur(10px); /* Adiciona o efeito de blur */
+            color: #eaeaea;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            animation: textRgbAnimation 2s infinite;
+        }
+
+        @keyframes textRgbAnimation {
+            0% { color: rgb(255, 0, 0); }   /* Vermelho */
+            33% { color: rgb(0, 255, 0); }  /* Verde */
+            66% { color: rgb(0, 0, 255); }  /* Azul */
+            100% { color: rgb(247, 0, 255); } /* Volta ao Vermelho */
+        }
+
+        /* Estilos para a tela de carregamento */
+        .loading-screen {
+            display: none; /* Oculta a tela de carregamento inicialmente */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro da tela de carregamento */
+            color: white;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .spinner {
+            border: 8px solid rgba(255, 255, 255, 0.3);
+            border-top: 8px solid #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Estilo para listas */
+        ul li {
+            margin-bottom: 10px;
+            background-color: #333; /* Fundo sólido */
+            border: 1px solid #444;
+            border-radius: 5px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        ul li:hover {
+            background-color: #444; /* Fundo ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Um pouco sobre a Astronomia</h1>
+    </header>
+
+    <!-- Tela de carregamento -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="spinner"></div>
+        <p></p>
+    </div>
+
+    <main>
+        <section>
+            <h2>O que é Astronomia?</h2>
+            <p>A astronomia é a ciência que estuda os corpos celestes, como estrelas, planetas, cometas e galáxias, além dos fenômenos que ocorrem fora da atmosfera da Terra. É uma das ciências mais antigas, e desde os tempos antigos, a humanidade se voltou para o céu em busca de respostas sobre nosso lugar no universo.</p>
+        </section>
+
+        <section>
+            <h2>Planetas do Sistema Solar</h2>
+            <ul>
+                <li><strong>Mercúrio:</strong> O planeta mais próximo do Sol, pequeno e sem atmosfera significativa.</li>
+                <li><strong>Vênus:</strong> Conhecido como o "planeta irmão" da Terra, com uma atmosfera densa e temperaturas extremamente altas.</li>
+                <li><strong>Terra:</strong> O único planeta conhecido que abriga vida, com água em estado líquido em sua superfície.</li>
+                <li><strong>Marte:</strong> O "planeta vermelho", conhecido por suas características semelhantes à Terra e por ter água em forma de gelo.</li>
+                <li><strong>Júpiter:</strong> O maior planeta do sistema solar, famoso por sua Grande Mancha Vermelha e muitas luas.</li>
+                <li><strong>Saturno:</strong> Conhecido por seus anéis impressionantes, é o segundo maior planeta do sistema solar.</li>
+                <li><strong>Urano:</strong> Um gigante gasoso que gira de lado, com anéis e uma coloração azulada devido ao metano.</li>
+                <li><strong>Netuno:</strong> O planeta mais distante, conhecido por seus ventos fortes e também pela cor azul intensa.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Curiosidades Astronômicas</h2>
+            <p>Algumas curiosidades fascinantes sobre o espaço incluem:</p>
+            <ul>
+                <li>Você pode ver a luz de estrelas que estão a milhões de anos-luz de distância, o que significa que estamos olhando para o passado.</li>
+                <li>Um dia em Vênus é mais longo do que um ano em Vênus devido à sua rotação lenta.</li>
+                <li>Existem mais estrelas no universo conhecido do que grãos de areia em todas as praias da Terra.</li>
+            </ul>
+        </section>
+
+        <!-- Botões de navegação -->
+        <div class="buttons-container">
+            <a href="index.html" onclick="showLoadingScreen(event)">Ir para Página inicial</a>
+            <a href="astra final.html" onclick="showLoadingScreen(event)">Próxima pagina</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Projeto Astra</p>
+    </footer>
+
+    <script>
+        function showLoadingScreen(event) {
+            event.preventDefault(); // Impede o link de redirecionar imediatamente
+            document.getElementById('loadingScreen').style.display = 'flex'; // Exibe a tela de carregamento
+
+            // Simula um atraso antes de redirecionar
+            setTimeout(function() {
+                window.location.href = event.target.getAttribute('href'); // Redireciona para o link correto
+            }, 2000); // 2 segundos de atraso
+        }
+    </script>
+</body>
+</html>
